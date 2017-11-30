@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?><instance>
+    <presentation name="sampleProblem" maxConstraintArity="3" maximize="false" format="XCSP 2.1_FRODO"/>
+    <domains nbDomains="5">
+        <domain name="dom0" nbValues="37"> 133 131 436 547 682 299 839 397 97 539 185 760 446 408 904 354 764 924 215 989 760 388 47 912 812 846 692 1 156 855 26 804 488 402 835 325 806</domain>
+        <domain name="dom1" nbValues="41"> 134 945 788 174 532 610 63 11 578 858 675 838 7 815 168 703 657 941 413 363 48 553 955 491 694 897 817 647 321 369 839 577 255 912 393 375 645 913 746 312 4</domain>
+        <domain name="dom2" nbValues="31"> 138 679 216 766 774 653 398 847 427 801 66 839 102 507 802 740 290 262 523 316 703 259 374 46 916 114 390 551 314 604 416</domain>
+        <domain name="dom3" nbValues="17"> 364 444 63 542 110 619 164 130 817 819 927 598 776 291 476 425 458</domain>
+        <domain name="dom4" nbValues="9"> 572 177 652 719 31 895 138 828 203</domain>
+    </domains>
+    <agents nbAgents="10">
+        <agent name="agent0"/>
+        <agent name="agent1"/>
+        <agent name="agent2"/>
+        <agent name="agent3"/>
+        <agent name="agent4"/>
+        <agent name="agent5"/>
+        <agent name="agent6"/>
+        <agent name="agent7"/>
+        <agent name="agent8"/>
+        <agent name="agent9"/>
+    </agents>
+    <variables nbVariables="20">
+        <variable name="X0" domain="dom2" agent="agent0"/>
+        <variable name="X1" domain="dom2" agent="agent0"/>
+        <variable name="X2" domain="dom3" agent="agent1"/>
+        <variable name="X3" domain="dom2" agent="agent1"/>
+        <variable name="X4" domain="dom2" agent="agent2"/>
+        <variable name="X5" domain="dom0" agent="agent2"/>
+        <variable name="X6" domain="dom3" agent="agent3"/>
+        <variable name="X7" domain="dom4" agent="agent3"/>
+        <variable name="X8" domain="dom4" agent="agent4"/>
+        <variable name="X9" domain="dom2" agent="agent4"/>
+        <variable name="X10" domain="dom3" agent="agent5"/>
+        <variable name="X11" domain="dom3" agent="agent5"/>
+        <variable name="X12" domain="dom4" agent="agent6"/>
+        <variable name="X13" domain="dom4" agent="agent6"/>
+        <variable name="X14" domain="dom1" agent="agent7"/>
+        <variable name="X15" domain="dom4" agent="agent7"/>
+        <variable name="X16" domain="dom4" agent="agent8"/>
+        <variable name="X17" domain="dom3" agent="agent8"/>
+        <variable name="X18" domain="dom4" agent="agent9"/>
+        <variable name="X19" domain="dom0" agent="agent9"/>
+    </variables>
+    <constraints nbConstraints="50">
+        <constraint name="GR_X19_X2" arity="3" scope="X19 X2" reference="GR">
+            <parameters>X19 X2  136</parameters>
+        </constraint>
+        <constraint name="EQu_X3_X3" arity="3" scope="X3 X3" reference="EQu">
+            <parameters>X3 X3  5</parameters>
+        </constraint>
+        <constraint name="EQu_X10_X16" arity="3" scope="X10 X16" reference="EQu">
+            <parameters>X10 X16  151</parameters>
+        </constraint>
+        <constraint name="GR_X10_X19" arity="3" scope="X10 X19" reference="GR">
+            <parameters>X10 X19  18</parameters>
+        </constraint>
+        <constraint name="GR_X1_X7" arity="3" scope="X1 X7" reference="GR">
+            <parameters>X1 X7  274</parameters>
+        </constraint>
+        <constraint name="GR_X13_X3" arity="3" scope="X13 X3" reference="GR">
+            <parameters>X13 X3  490</parameters>
+        </constraint>
+        <constraint name="GR_X2_X2" arity="3" scope="X2 X2" reference="GR">
+            <parameters>X2 X2  132</parameters>
+        </constraint>
+        <constraint name="EQu_X1_X6" arity="3" scope="X1 X6" reference="EQu">
+            <parameters>X1 X6  487</parameters>
+        </constraint>
+        <constraint name="GR_X5_X8" arity="3" scope="X5 X8" reference="GR">
+            <parameters>X5 X8  297</parameters>
+        </constraint>
+        <constraint name="GR_X5_X19" arity="3" scope="X5 X19" reference="GR">
+            <parameters>X5 X19  14</parameters>
+        </constraint>
+        <constraint name="EQu_X16_X6" arity="3" scope="X16 X6" reference="EQu">
+            <parameters>X16 X6  460</parameters>
+        </constraint>
+        <constraint name="EQu_X8_X4" arity="3" scope="X8 X4" reference="EQu">
+            <parameters>X8 X4  384</parameters>
+        </constraint>
+        <constraint name="EQu_X16_X5" arity="3" scope="X16 X5" reference="EQu">
+            <parameters>X16 X5  243</parameters>
+        </constraint>
+        <constraint name="EQu_X19_X7" arity="3" scope="X19 X7" reference="EQu">
+            <parameters>X19 X7  356</parameters>
+        </constraint>
+        <constraint name="GR_X3_X2" arity="3" scope="X3 X2" reference="GR">
+            <parameters>X3 X2  1</parameters>
+        </constraint>
+        <constraint name="EQu_X15_X1" arity="3" scope="X15 X1" reference="EQu">
+            <parameters>X15 X1  25</parameters>
+        </constraint>
+        <constraint name="GR_X2_X10" arity="3" scope="X2 X10" reference="GR">
+            <parameters>X2 X10  220</parameters>
+        </constraint>
+        <constraint name="GR_X8_X5" arity="3" scope="X8 X5" reference="GR">
+            <parameters>X8 X5  348</parameters>
+        </constraint>
+        <constraint name="EQu_X4_X7" arity="3" scope="X4 X7" reference="EQu">
+            <parameters>X4 X7  457</parameters>
+        </constraint>
+        <constraint name="GR_X17_X16" arity="3" scope="X17 X16" reference="GR">
+            <parameters>X17 X16  166</parameters>
+        </constraint>
+        <constraint name="EQu_X14_X0" arity="3" scope="X14 X0" reference="EQu">
+            <parameters>X14 X0  453</parameters>
+        </constraint>
+        <constraint name="GR_X8_X16" arity="3" scope="X8 X16" reference="GR">
+            <parameters>X8 X16  88</parameters>
+        </constraint>
+        <constraint name="EQu_X4_X2" arity="3" scope="X4 X2" reference="EQu">
+            <parameters>X4 X2  14</parameters>
+        </constraint>
+        <constraint name="EQu_X19_X18" arity="3" scope="X19 X18" reference="EQu">
+            <parameters>X19 X18  213</parameters>
+        </constraint>
+        <constraint name="GR_X4_X8" arity="3" scope="X4 X8" reference="GR">
+            <parameters>X4 X8  244</parameters>
+        </constraint>
+        <constraint name="EQu_X10_X2" arity="3" scope="X10 X2" reference="EQu">
+            <parameters>X10 X2  63</parameters>
+        </constraint>
+        <constraint name="GR_X10_X10" arity="3" scope="X10 X10" reference="GR">
+            <parameters>X10 X10  170</parameters>
+        </constraint>
+        <constraint name="GR_X0_X1" arity="3" scope="X0 X1" reference="GR">
+            <parameters>X0 X1  368</parameters>
+        </constraint>
+        <constraint name="GR_X12_X5" arity="3" scope="X12 X5" reference="GR">
+            <parameters>X12 X5  401</parameters>
+        </constraint>
+        <constraint name="GR_X8_X7" arity="3" scope="X8 X7" reference="GR">
+            <parameters>X8 X7  209</parameters>
+        </constraint>
+        <constraint name="EQu_X3_X3" arity="3" scope="X3 X3" reference="EQu">
+            <parameters>X3 X3  115</parameters>
+        </constraint>
+        <constraint name="EQu_X6_X9" arity="3" scope="X6 X9" reference="EQu">
+            <parameters>X6 X9  322</parameters>
+        </constraint>
+        <constraint name="GR_X0_X6" arity="3" scope="X0 X6" reference="GR">
+            <parameters>X0 X6  17</parameters>
+        </constraint>
+        <constraint name="EQu_X15_X8" arity="3" scope="X15 X8" reference="EQu">
+            <parameters>X15 X8  435</parameters>
+        </constraint>
+        <constraint name="GR_X8_X17" arity="3" scope="X8 X17" reference="GR">
+            <parameters>X8 X17  239</parameters>
+        </constraint>
+        <constraint name="GR_X4_X17" arity="3" scope="X4 X17" reference="GR">
+            <parameters>X4 X17  195</parameters>
+        </constraint>
+        <constraint name="EQu_X8_X6" arity="3" scope="X8 X6" reference="EQu">
+            <parameters>X8 X6  31</parameters>
+        </constraint>
+        <constraint name="GR_X10_X11" arity="3" scope="X10 X11" reference="GR">
+            <parameters>X10 X11  219</parameters>
+        </constraint>
+        <constraint name="EQu_X17_X11" arity="3" scope="X17 X11" reference="EQu">
+            <parameters>X17 X11  330</parameters>
+        </constraint>
+        <constraint name="GR_X4_X8" arity="3" scope="X4 X8" reference="GR">
+            <parameters>X4 X8  478</parameters>
+        </constraint>
+        <constraint name="GR_X7_X1" arity="3" scope="X7 X1" reference="GR">
+            <parameters>X7 X1  261</parameters>
+        </constraint>
+        <constraint name="GR_X2_X14" arity="3" scope="X2 X14" reference="GR">
+            <parameters>X2 X14  23</parameters>
+        </constraint>
+        <constraint name="GR_X9_X0" arity="3" scope="X9 X0" reference="GR">
+            <parameters>X9 X0  388</parameters>
+        </constraint>
+        <constraint name="EQu_X1_X11" arity="3" scope="X1 X11" reference="EQu">
+            <parameters>X1 X11  135</parameters>
+        </constraint>
+        <constraint name="GR_X14_X12" arity="3" scope="X14 X12" reference="GR">
+            <parameters>X14 X12  241</parameters>
+        </constraint>
+        <constraint name="EQu_X6_X4" arity="3" scope="X6 X4" reference="EQu">
+            <parameters>X6 X4  423</parameters>
+        </constraint>
+        <constraint name="GR_X2_X17" arity="3" scope="X2 X17" reference="GR">
+            <parameters>X2 X17  381</parameters>
+        </constraint>
+        <constraint name="GR_X10_X15" arity="3" scope="X10 X15" reference="GR">
+            <parameters>X10 X15  67</parameters>
+        </constraint>
+        <constraint name="GR_X8_X12" arity="3" scope="X8 X12" reference="GR">
+            <parameters>X8 X12  308</parameters>
+        </constraint>
+        <constraint name="EQu_X10_X0" arity="3" scope="X10 X0" reference="EQu">
+            <parameters>X10 X0  337</parameters>
+        </constraint>
+    </constraints>
+    <predicates nbPredicates="2">
+        <predicate name="GR">
+            <parameters>int X int Y int val</parameters>
+            <expression>
+                <functional>gt(sub(X,Y),val)</functional>
+            </expression>
+        </predicate>
+        <predicate name="EQu">
+            <parameters>int X int Y int val</parameters>
+            <expression>
+                <functional>eq(sub(X,Y),val)</functional>
+            </expression>
+        </predicate>
+    </predicates>
+</instance>
