@@ -1,0 +1,97 @@
+graph {
+	node [shape = "circle"];
+	subgraph cluster_agent6 {
+		label = agent6;
+		X12 [style="filled"];
+		X13 [style="filled"];
+	}
+	subgraph cluster_agent5 {
+		label = agent5;
+		X10 [style="filled"];
+		X11 [style="filled"];
+	}
+	subgraph cluster_agent8 {
+		label = agent8;
+		X16 [style="filled"];
+		X17 [style="filled"];
+	}
+	subgraph cluster_agent7 {
+		label = agent7;
+		X14 [style="filled"];
+		X15 [style="filled"];
+	}
+	subgraph cluster_agent9 {
+		label = agent9;
+		X19 [style="filled"];
+		X18;
+	}
+	subgraph cluster_agent0 {
+		label = agent0;
+		X0 [style="filled"];
+		X1 [style="filled"];
+	}
+	subgraph cluster_agent2 {
+		label = agent2;
+		X4 [style="filled"];
+		X5 [style="filled"];
+	}
+	subgraph cluster_agent1 {
+		label = agent1;
+		X2 [style="filled"];
+		X3 [style="filled"];
+	}
+	subgraph cluster_agent4 {
+		label = agent4;
+		X8 [style="filled"];
+		X9 [style="filled"];
+	}
+	subgraph cluster_agent3 {
+		label = agent3;
+		X6 [style="filled"];
+		X7 [style="filled"];
+	}
+
+
+	X8 -- X12;
+	X8 -- X4;
+	X8 -- X16;
+	X8 -- X5;
+	X8 -- X15;
+	X8 -- X6;
+	X8 -- X7;
+	X8 -- X17;
+	X9 -- X0;
+	X9 -- X6;
+	X19 -- X10;
+	X19 -- X18;
+	X10 -- X0;
+	X1 -- X0;
+	X11 -- X10;
+	X11 -- X1;
+	X2 -- X19;
+	X2 -- X10;
+	X2 -- X14;
+	X2 -- X17;
+	X14 -- X0;
+	X14 -- X12;
+	X3 -- X2;
+	X3 -- X13;
+	X4 -- X2;
+	X4 -- X17;
+	X16 -- X10;
+	X5 -- X19;
+	X5 -- X12;
+	X5 -- X16;
+	X15 -- X10;
+	X15 -- X1;
+	X6 -- X0;
+	X6 -- X1;
+	X6 -- X16;
+	X6 -- X4;
+	X7 -- X19;
+	X7 -- X1;
+	X7 -- X4;
+	X17 -- X11;
+	X17 -- X16;
+}
+
