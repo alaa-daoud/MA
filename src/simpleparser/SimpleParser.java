@@ -27,11 +27,13 @@ public class SimpleParser {
     String variablesFile = "var.txt";
     String constraintsFile = "ctr.txt";
     String outPutFile = "data.xml";
+    String problemType="satisfaction"; // possible values (satisfaction,optimization)
     BufferedReader in;
     StreamResult out;
     TransformerHandler th;
     AttributesImpl Attr;
     int maxBalanceAgents=10;
+    boolean Satisfaction=true;
     //used only for creating simple problem file example 
     int maxConsts = 50;
     int maxVars = 20;
@@ -39,7 +41,7 @@ public class SimpleParser {
     int nbDomains = 5;
     int maxDomSize = 50;
     String simpleModel = "balance";
-
+    
     public static void main(String args[]) {
         new SimpleParser().parse("simple");
     }
@@ -121,6 +123,7 @@ public class SimpleParser {
             ArrayList<Map> variables = section(variablesBufferedReader, "variable");
             ArrayList<Map> constraints = section(ConstraintsBufferedReader, "constraint");
             ArrayList<Map> predicates = Predicate.predicates();
+            ArrayList<Map> functions = Predicate.functionsSection();
             ArrayList<Map> agents = assignAgents(variables, constraints, domains, method);
             //System.err.println(variables.get(0));
             //XMLBuild(predicates.get(0), "predicate");
@@ -129,7 +132,10 @@ public class SimpleParser {
             System.out.println(variables.size());
             buildSection(variables, "variables");
             buildSection(constraints, "constraints");
-            buildSection(predicates, "predicates");
+            if(problemType.equalsIgnoreCase("satisfaction"))
+                buildSection(predicates, "predicates");
+            else
+                buildSection(functions, "functions");
             closeXml();
         } catch (Exception e) {
             Logger.getLogger(SimpleParser.class.getName()).log(Level.SEVERE, null, e);
@@ -272,6 +278,24 @@ public class SimpleParser {
                 Attr.addAttribute("", "", "name", "", element.get("name"));
 
                 th.startElement("", "", "predicate", Attr);
+
+                th.startElement("", "", "parameters", null);
+                th.characters(element.get("parameters").toCharArray(), 0, element.get("parameters").length());
+                th.endElement(null, null, "parameters");
+                th.startElement("", "", "expression", null);
+                th.startElement("", "", "functional", null);
+                th.characters(element.get("functional").toCharArray(), 0, element.get("functional").length());
+                th.endElement(null, null, "functional");
+                th.endElement(null, null, "expression");
+
+                th.endElement(null, null, "predicate");
+                break;
+            case "function":
+
+                Attr = new Attributes2Impl();
+                Attr.addAttribute("", "", "name", "", element.get("name"));
+                Attr.addAttribute("", "", "return", "", "int");
+                th.startElement("", "", "function", Attr);
 
                 th.startElement("", "", "parameters", null);
                 th.characters(element.get("parameters").toCharArray(), 0, element.get("parameters").length());
@@ -448,6 +472,27 @@ enum Predicate {
         ArrayList<Map> result = new ArrayList<Map>();
         result.add(pred(GR));
         result.add(pred(EQu));
+        return result;
+    }
+    public static HashMap<String, String> func(Predicate t) {
+        HashMap res = new HashMap<String, String>();
+
+        res.put("parameters", "int X int Y int val");
+        if (t.equals(Predicate.GR)) {
+            res.put("name", "GR");
+            res.put("functional", "if(gt(abs(sub(X,Y)),val),0,sub(val,abs(sub(X,Y))))");
+        }
+        if (t.equals(Predicate.EQu)) {
+            res.put("name", "EQu");
+            res.put("functional", "abs(sub(sub(X,Y),val))");
+        }
+        return res;
+    }
+    public static ArrayList<Map> functionsSection()
+    {
+        ArrayList<Map> result = new ArrayList<Map>();
+        result.add(func(GR));
+        result.add(func(EQu));
         return result;
     }
 }
